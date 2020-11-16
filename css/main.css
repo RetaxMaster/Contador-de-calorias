@@ -1,0 +1,28 @@
+.card-header {
+    background: #800606;
+    color: #fff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #272727;
+    border-color: #272727;
+    transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -ms-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+}
+
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #2e2e2e;
+    border-color: #272727;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #1b1b1b;
+    border-color: #1b1b1b;
+}
