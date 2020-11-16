@@ -9,13 +9,13 @@ const compose = (...functions) => data =>
     for (const attr of keys)
       attrs.push(`${attr}="${obj[attr]}"`);
 
-    const string = attrs.join("");
+    const string = attrs.join(" ");
     return string;
 
   }
 
   const tagAttrs = obj => (content = "") => 
-    `<${obj.tag}${obj.attrs ? '' : ''}${attrsToString(obj.attrs)}>${content}</${tag}>`
+    `<${obj.tag}${obj.attrs ? ' ' :  ''}${attrsToString(obj.attrs)}>${content}</${obj.tag}>`
 
   const tag = t => {
     if(typeof t === 'string') {
