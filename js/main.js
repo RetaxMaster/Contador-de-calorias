@@ -1,28 +1,15 @@
 const compose = (...functions) => data =>
   functions.reduceRight((value, func) => func(value), data)
 
-  const attrsToString = (obj = {}) => {
-
-    const keys = Object.keys(obj);
-    const attrs = [];
-
-    for (const attr of keys)
-      attrs.push(`${attr}="${obj[attr]}"`);
-
-    const string = attrs.join(" ");
-    return string;
-
-  }
+  const attrsToString = (obj = {}) =>
+    Object.keys(obj)
+      .map(attr => `${attr}="${obj[attr]}"`)
+      .join(' ')
 
   const tagAttrs = obj => (content = "") => 
     `<${obj.tag}${obj.attrs ? ' ' :  ''}${attrsToString(obj.attrs)}>${content}</${obj.tag}>`
 
-  const tag = t => {
-    if(typeof t === 'string') {
-      return tagAttrs({ tag: t })
-    }
-    return tagAttrs(t)
-  }
+  const tag = t => typeof t === 'string' ? tagAttrs({ tag: t }) : tagAttrs(t)
 
   const tableRowTag = tag("tr");
   // const tableRow = items => tableRowTag(tableCells(items))
